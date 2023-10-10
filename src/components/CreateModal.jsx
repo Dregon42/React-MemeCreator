@@ -26,6 +26,7 @@ const style = {
 };
 
 export default function CreateModal({ closeModal, backgroundImage }) {
+  const [image, setImage] = useState(backgroundImage);
   const [open, setOpen] = useState(true);
   const [text, setText] = useState('');
   const { register, handleSubmit } = useForm({});
@@ -41,14 +42,14 @@ export default function CreateModal({ closeModal, backgroundImage }) {
     closeModal();
   }; 
 
-  const onSubmit = async (data, event) => {
+  const onSubmit = (data) => {
     console.log(`ID: ${typeof data.id}`);
     console.log(data.id)
     console.log(data)
     
     dispatch(chooseQuote(data.quote));
     dispatch(chooseImage(data.image));
-    dispatch(chooseUser(data.user_token));
+    // dispatch(chooseUser(data.user_token));
 
     server_calls.create(store.getState());
     setTimeout(() => {window.location.reload()}, 3000)
@@ -67,7 +68,6 @@ export default function CreateModal({ closeModal, backgroundImage }) {
         aria-describedby="transition-modal-description"
         open={open}
         onClose={handleClose}
-        onSubmit={handleSubmit(onSubmit)}
         closeAfterTransition
         slots={{ backdrop: Backdrop }}
         slotProps={{
@@ -90,12 +90,12 @@ export default function CreateModal({ closeModal, backgroundImage }) {
                 <img 
                   {... register('image')}
                   name='image'
-                  src={backgroundImage} alt="" className='image h-full' />
+                  src={image} alt="" className='image h-full' />
                 <h1 className='absolute bottom-5 left-0 right-0 text-white text-xl font-bold text-center h-auto w-max-1/4 break-words'>
                   {text}
                 </h1>
             </div>
-            <Button variant='contained' type='submit' onClick={handleClose}>Submit</Button>
+            <Button variant='contained' type='submit' onClick={handleSubmit(onSubmit)}>Submit</Button>
           </Box>
         </Fade>
       </Modal>
