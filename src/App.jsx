@@ -1,9 +1,11 @@
 
 import Meme from './pages/Meme';
 import Home from './pages/Home';
-import Bar from './components/bar';
+import NavBar from './components/NavBar';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import MemeList from './pages/MemeList';
+import { Provider } from 'react-redux';
+import { store } from './redux/store';
 
 function App() {
   
@@ -11,12 +13,14 @@ function App() {
   return (
     <div className='flex'>
      <BrowserRouter>
-        <Bar />
-        <Routes>
-          <Route path='/' element={<Home/>} />
-          <Route path='/memelist' element={<MemeList />}/>
-          <Route path='/meme' element={<Meme />}/>
-        </Routes>
+        <NavBar />
+        <Provider store={store}>
+          <Routes>
+            <Route path='/' element={<Home/>} />
+            <Route path='/memelist' element={<MemeList />}/>
+            <Route path='/meme' element={<Meme />}/>
+          </Routes>
+        </Provider>
      </BrowserRouter>
     </div>
   )
