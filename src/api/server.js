@@ -21,7 +21,7 @@ export const server_calls = {
     },
 
     create:async (data) => {
-        const response = await fetch(`https://car-collection-bs48.onrender.com/api/cars`,
+        const response = await fetch(`https://memeornot.onrender.com/api/memes`,
         {
             method: 'POST' ,
             headers: {

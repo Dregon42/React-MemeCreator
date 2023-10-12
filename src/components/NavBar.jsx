@@ -32,7 +32,7 @@ export default function NavBar() {
               <li className='text-slate-300 text-sm flex items-center gap-x-4 cursor-pointer 
                 p-2 hover:bg-light-white rounded-md mt-2'>
                 <a href="/meme">
-                    <i class="fa-regular fa-face-grin-tongue-wink block float-left text-2xl mr-2"></i>{/* TODO: List icon from font-awsome  */}
+                    <i className="fa-regular fa-face-grin-tongue-wink block float-left text-2xl mr-2"></i>{/* TODO: List icon from font-awsome  */}
                     <span className={`text-base font-medium flex-1 ${!open && 'hidden'}`} >
                       Create Meme
                     </span>

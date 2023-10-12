@@ -43,16 +43,14 @@ export default function CreateModal({ closeModal, backgroundImage }) {
   }; 
 
   const onSubmit = (data) => {
-    console.log(`ID: ${typeof data.id}`);
-    console.log(data.id)
     console.log(data)
     
     dispatch(chooseQuote(data.quote));
-    dispatch(chooseImage(data.image));
+    dispatch(chooseImage(backgroundImage));
     // dispatch(chooseUser(data.user_token));
 
     server_calls.create(store.getState());
-    setTimeout(() => {window.location.reload()}, 3000)
+    // setTimeout(() => {window.location.reload()}, 3000)
   
   }
 
