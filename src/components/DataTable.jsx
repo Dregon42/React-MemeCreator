@@ -42,10 +42,10 @@ export default function DataGridDemo() {
   return (
     <>
       <div className="flex flex-row">
-        <button onClick={openModal} className="p-3 bg-slate-300 rounded m-3 hover:bg-slate-800 hover:text-white">View</button>
-        <button onClick={deleteData} className="p-3 bg-slate-300 rounded m-3 hover:bg-slate-800 hover:text-white">Delete</button>
+        <button onClick={openModal} className="p-3 bg-slate-300 rounded m-3 hover:text-white transition ease-in-out shadow-2xl shadow-black hover:-translate-y-1 hover:scale-110 hover:bg-dark-purple duration-300 hover:drop-shadow-xl">View</button>
+        <button onClick={deleteData} className="p-3 bg-slate-300 rounded m-3 hover:text-white transition ease-in-out shadow-2xl shadow-black hover:-translate-y-1 hover:scale-110 hover:bg-dark-purple duration-300 hover:drop-shadow-xl">Delete</button>
       </div>
-      <div className='p-20'>
+      <div className='p-10 p1-10'>
         <Box sx={{ height: 400, width: '100%' }}>
           <DataGrid
             sx={{

@@ -17,8 +17,8 @@ function App() {
         <Provider store={store}>
           <Routes>
             <Route path='/' element={<Home/>} />
-            <Route path='/memelist' element={<MemeList />}/>
-            <Route path='/meme' element={<Meme />}/>
+            <Route path='/memelist' element={<MemeList />} protected/>
+            <Route path='/meme' element={<Meme />} protected />
           </Routes>
         </Provider>
      </BrowserRouter>

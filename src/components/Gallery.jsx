@@ -23,7 +23,7 @@ export default function Gallery() {
     };  
 
     return (
-        <div className='m-3 h-screen'>
+        <div className='p-5 h-full w-3/4'>
             <ResponsiveMasonry
                 columnsCountBreakPoints={{350: 1, 750: 2, 900: 3}}
             >
