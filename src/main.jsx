@@ -10,7 +10,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       domain="dev-l533zzaw0trbepod.us.auth0.com"
       clientId="GitLc8NByApAQJOhh6iFVMTsKI7Z3K43"
       authorizationParams={{
-        redirect_uri: 'http://localhost:5173/meme'
+        redirect_uri: window.location.origin
       }}
     >
       <App />

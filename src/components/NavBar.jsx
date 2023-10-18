@@ -12,6 +12,10 @@ export default function NavBar() {
     setAuthenticated(true);
   };
 
+  const handleLogout = () => {
+    setAuthenticated(false)
+  };
+
   return (
     <nav className='flex h-screen'>
         <div className={`bg-dark-purple  p-5 pt-8
@@ -49,25 +53,28 @@ export default function NavBar() {
                   </span>
                 </a>
               </li>
+              <li className='text-slate-300 text-sm flex items-center gap-x-4 cursor-pointer 
+                p-2 hover:bg-light-white rounded-md mt-2'>
+                  <a>
+                    <i className="fa-solid fa-right-to-bracket block float-left text-2xl mr-2"></i>
+                    <span className={`text-base font-medium flex-1 ${!open && 'hidden'}`}>
+                      <LoginButton setAuthenticated={setAuthenticated}/>
+                    </span>
+                  </a>
+                </li>
               {/* TODO: add javavscript if !authenticated show signup or signin else logout  */}
-              <li className='text-slate-300 text-sm flex items-center gap-x-4 cursor-pointer 
-                p-2 hover:bg-light-white rounded-md mt-2'>
-                <a onClick={handleLogin}>
-                  <i className="fa-solid fa-right-to-bracket block float-left text-2xl mr-2"></i>
-                  <span className={`text-base font-medium flex-1 ${!open && 'hidden'}`}>
-                    <LoginButton />
-                  </span>
-                </a>
-              </li>
-              <li className='text-slate-300 text-sm flex items-center gap-x-4 cursor-pointer 
-                p-2 hover:bg-light-white rounded-md mt-2'>
-                <a href="#">
-                  <i className='fas fa-sign-out-alt block float-left text-2xl mr-2'></i>
-                  <span className={`text-base font-medium flex-1 ${!open && 'hidden'}`}>
-                    <LogoutButton />
-                  </span>
-                </a>
-              </li>
+              {
+                authenticated &&
+                <li className='text-slate-300 text-sm flex items-center gap-x-4 cursor-pointer 
+                  p-2 hover:bg-light-white rounded-md mt-2'>
+                  <a onClick={ () => {handleLogout()}}>
+                    <i className='fas fa-sign-out-alt block float-left text-2xl mr-2'></i>
+                    <span className={`text-base font-medium flex-1 ${!open && 'hidden'}`}>
+                      <LogoutButton />
+                    </span>
+                  </a>
+                </li>
+              }
             </ul>
         </div>
     </nav>
