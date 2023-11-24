@@ -28,7 +28,7 @@ export default function NavBar() {
                 <img src="https://yt3.ggpht.com/a/AGF-l7_lwWZmSjA50lpZHUV7-2Q_7-DfWDmlMz7Sig=s900-c-k-c0xffffffff-no-rj-mo" alt="red eyed monnkey with a yellow vest and " 
                   className={`h-9 block float-left cursor-pointer mr-2 duration-300 ${ open && 'rotate-[360deg]'}`}/>
                 <h1 className={`text-white origin-left font-medium text-2xl ${!open && 'scale-0'}`}>
-                  Meme Me Baby
+                  Meme or Not
                 </h1>
               </a>
             </div>
